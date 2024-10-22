@@ -46,8 +46,10 @@ ul span {
 }
 
 .checkbox {
+  display: flex;
   margin-top: 80px;
   color: white;
+  align-items: baseline;
 }
 
 #box {
@@ -55,7 +57,7 @@ ul span {
   width: 15px;
   height: 15px;
   border: solid 2px white;
-  vertical-align: center;
+  vertical-align: baseline;
   border-radius: 3px;
   cursor: pointer;
 }

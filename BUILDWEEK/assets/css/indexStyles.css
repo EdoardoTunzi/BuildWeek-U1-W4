@@ -45,8 +45,10 @@ ul span {
 }
 
 .checkbox {
+  display: flex;
   margin-top: 80px;
   color: white;
+  align-items: baseline;
 }
 
 #box {
@@ -54,13 +56,33 @@ ul span {
   width: 15px;
   height: 15px;
   border: solid 2px white;
-  vertical-align: center;
+  vertical-align: baseline;
   border-radius: 3px;
+  cursor: pointer;
+}
+#box:checked {
+  /*per mettere il colore alla checkbox una volta cliccata */
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: #00ffff;
+}
+#box:checked::before {
+  content: "";
+  color: black;
+  position: absolute;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
-button {
+#proceed_button {
   margin-left: 200px;
-  background-color: #00ffff;
+  background-color: white;
   color: #0c1839;
   font-weight: bold;
   padding: 15px;
@@ -69,6 +91,10 @@ button {
   border: none;
 }
 
-button:hover {
+#proceed_button:hover {
   box-shadow: 0px 0px 26px 7px #00ffff;
+}
+
+.alert {
+  color: red;
 }

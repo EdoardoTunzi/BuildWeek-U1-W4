@@ -16,7 +16,8 @@ let counter = 0;
 proceed_button.onclick = function () {
   if (checkbox.checked == true) {
     //se la checkbox è spuntata manda al benchmark
-    window.location.href = "benchmark.html";
+    const url = "benchmark.html";
+    window.location.href = url;
   } else {
     //se la checkbox non è spuntata mostra un alert
     if (counter === 0) {

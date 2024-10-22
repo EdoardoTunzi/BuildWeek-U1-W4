@@ -28,13 +28,16 @@
           <p class="description2">4/6 questions</p>
         </div>
         <div class="pie-chart results">
-          <p id="congrats">Congratulations!</p>
-          <p id="passed-text">You passed the exam.</p>
-          <p id="passed-info">
-            We'll send you the certificate <br />
-            in few minutes. <br />Check your email (including <br />
-            promotions / spam folder)
-          </p>
+          <canvas id="chart" width="400" height="400"></canvas>
+          <div class="chart-text">
+            <p id="congrats">Congratulations!</p>
+            <p id="passed-text">You passed the exam.</p>
+            <p id="passed-info">
+              We'll send you the certificate <br />
+              in few minutes. <br />Check your email (including <br />
+              promotions / spam folder)
+            </p>
+          </div>
         </div>
         <div class="results" id="wrong">
           <p class="title">Wrong</p>
@@ -44,5 +47,6 @@
       </div>
       <button>RATE US</button>
     </main>
+    <script src="./assets/js/results.js"></script>
   </body>
 </html>

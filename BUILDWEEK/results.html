@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <title>Results Page</title>
     <link rel="stylesheet" href="./assets/css/resultsStyles.css" />
   </head>
   <body>
@@ -11,19 +17,29 @@
       <img class="logo" src="./assets/imgs/epicode_logo.png" alt="logo epicode" />
     </header>
     <main>
-      <h1>Results</h1>
-      <h3>The summary of your answers:</h3>
+      <div class="title-box">
+        <h1 class="title">Results</h1>
+        <h3 class="title">The summary of your answers:</h3>
+      </div>
       <div class="results-box">
         <div class="results" id="correct">
-          <p>Correct</p>
-          <p>66.7%</p>
-          <p>4/6 questions</p>
+          <p class="title">Correct</p>
+          <p class="percent">66.7%</p>
+          <p class="description2">4/6 questions</p>
         </div>
-        <div class="pie-chart"></div>
+        <div class="pie-chart results">
+          <p id="congrats">Congratulations!</p>
+          <p id="passed-text">You passed the exam.</p>
+          <p id="passed-info">
+            We'll send you the certificate <br />
+            in few minutes. <br />Check your email (including promotions <br />
+            / spam folder)
+          </p>
+        </div>
         <div class="results" id="wrong">
-          <p>Wrong</p>
-          <p>66.7%</p>
-          <p>4/6 questions</p>
+          <p class="title">Wrong</p>
+          <p class="percent">66.7%</p>
+          <p class="description2">4/6 questions</p>
         </div>
       </div>
       <button>RATE US</button>

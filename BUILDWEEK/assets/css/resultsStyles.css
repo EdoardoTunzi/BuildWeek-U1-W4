@@ -1,0 +1,82 @@
+body {
+  background-image: url(../imgs/bg.jpg);
+  background-size: cover;
+  margin-top: 40px;
+  margin-inline: 80px;
+  font-family: "Outfit", sans-serif;
+  color: white;
+}
+.title,
+.percent {
+  font-family: "Outfit", sans-serif;
+}
+.description {
+  font-family: "Inter", sans-serif;
+}
+/* HEADER */
+.logo {
+  width: 130px;
+}
+
+/*MAIN*/
+
+/*title-box*/
+.title-box {
+  text-align: center;
+  line-height: 5px;
+}
+h1 {
+  font-size: 60px;
+  color: white;
+  margin-top: 30px;
+}
+h3 {
+  font-size: 32px;
+  font-weight: 300;
+}
+/*results-box*/
+.results-box {
+  text-align: center;
+}
+.results {
+  display: inline-block;
+
+  width: 33, 333%;
+  /*margin-right: -4%;*/
+  line-height: 5px;
+}
+#correct {
+  text-align: left;
+}
+#wrong {
+  text-align: right;
+}
+.results .title {
+  font-size: 60px;
+}
+.results .percent {
+  font-size: 60px;
+  font-weight: bold;
+}
+.results .description2 {
+  font-size: 24px;
+  font-weight: 200;
+  margin-top: -20px;
+}
+/*pie chart section*/
+#congrats,
+#passed-text {
+  font-size: 30px;
+}
+/*button*/
+main button {
+  display: block;
+  margin-inline: auto;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 20px 75px;
+  margin-top: 50px;
+}

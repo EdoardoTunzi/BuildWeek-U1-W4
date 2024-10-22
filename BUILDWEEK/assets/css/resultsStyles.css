@@ -19,7 +19,9 @@ body {
 }
 
 /*MAIN*/
-
+main {
+  margin-top: 50px;
+}
 /*title-box*/
 .title-box {
   text-align: center;
@@ -28,7 +30,6 @@ body {
 h1 {
   font-size: 60px;
   color: white;
-  margin-top: 30px;
 }
 h3 {
   font-size: 32px;
@@ -77,7 +78,7 @@ h3 {
   font-size: 12px;
 }
 /*button*/
-main button {
+button {
   display: block;
   margin-inline: auto;
   background: none;
@@ -87,4 +88,8 @@ main button {
   font-size: 30px;
   padding: 20px 75px;
   margin-top: 50px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 50px -15px rgba(0, 255, 255, 0.37);
 }

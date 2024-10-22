@@ -69,7 +69,7 @@ ul span {
 #box:checked::before {
   content: "";
   color: black;
-  position: fixed;
+  position: absolute;
   padding-bottom: 4px;
   box-sizing: border-box;
   width: 10px;

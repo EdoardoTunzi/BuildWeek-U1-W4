@@ -37,7 +37,7 @@ h1 {
   font-weight: bold;
 }
 
-.answer :hover {
+#quiz-container :hover {
   background-color: #d20094;
 }
 
@@ -56,7 +56,7 @@ button {
   font-family: "Outfit", sans-serif;
 }
 
-.answer {
+#quiz-container {
   text-align: center;
 }
 

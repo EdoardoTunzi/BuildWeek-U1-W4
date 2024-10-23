@@ -1,11 +1,7 @@
 * {
   box-sizing: border-box; /* imposta box-sizing per tutti gli elementi */
 }
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 /* definisco gli attributi del container di tutti i div */
 .timerContainer {
   width: 160px;
@@ -19,7 +15,8 @@ body {
   height: 160px;
   width: 160px;
   border-radius: 50%;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px 6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.7),
+    -6px 6px 10px -1px rgba(0, 0, 0, 0.15);
   padding: 20px;
 }
 .inner {
@@ -29,18 +26,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px 4px 6px -1px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
-    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.7),
+    inset -4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0.5px 0.5px 0px rgba(0, 0, 0, 0.7), 0px 12px 10px -10px rgba(0, 0, 0, 0.7);
 }
 #timer {
   font-size: 50px;
   font-weight: bold;
-  color: #555;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .number {
   text-align: center;
   font-size: 12px; /* testo più piccolo*/
+  color: rgba(255, 255, 255, 0.7);
 }
 #timer + br + span {
   font-size: 12px;

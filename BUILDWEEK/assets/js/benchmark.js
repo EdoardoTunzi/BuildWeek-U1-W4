@@ -1,3 +1,7 @@
+// startTimer();
+
+//////////////////////////////////////////////////////////
+
 const arrayQuestions = [
   {
     type: "boolean",
@@ -90,14 +94,60 @@ const arrayQuestions = [
     incorrect_answers: ["Binary", "Duodecimal", "Octal"],
   },
 ];
+
 //definiamo variabili da passare alla pagina results
 let correctAnswers = 0;
 let wrongAnswers = 0;
 
 let questionNumber = 0; //indice domanda di arrayQuestions
 
+let timer;
+let startTime;
+const totalTime = 60; // tempo totale in secondi
+const circle = document.querySelector("circle");
+const strokeDashArray = 472; // valore fisso per il cerchio
+circle.style.strokeDasharray = strokeDashArray; // imposta il valore dasharray
+
+function startTimer() {
+  resetCircle();
+  startTime = Date.now(); // imposta l'ora di inizio
+  timer = requestAnimationFrame(updateProgressBar); // inizia ad aggiornare la progress bar
+}
+
+function updateProgressBar() {
+  const currentTime = Date.now(); // ottieni il tempo attuale
+  const elapsedTime = (currentTime - startTime) / 1000; // calcola il tempo trascorso in secondi
+  const timeLeft = Math.max(totalTime - elapsedTime, 0); // tempo rimanente
+
+  // calcola l'offset in base al tempo rimanente
+  const dashOffset = (timeLeft / totalTime) * strokeDashArray;
+  circle.style.strokeDashoffset = dashOffset; // imposta l'offset
+
+  // aggiorna il display del timer
+  document.getElementById("timer").textContent = Math.ceil(timeLeft); // arrotonda per eccesso
+
+  if (timeLeft <= 0) {
+    if (questionNumber === arrayQuestions.length - 1) {
+      wrongAnswers += 1;
+      window.location.href = "results.html";
+    } else {
+      questionNumber++;
+      wrongAnswers += 1;
+      resetCircle(); // resetta il cerchio a vuoto
+      showQuestion(arrayQuestions); // passa alla prossima domanda
+    }
+  } else {
+    timer = requestAnimationFrame(updateProgressBar); // continua ad aggiornare la progress bar
+  }
+}
+
+function resetCircle() {
+  circle.style.strokeDashoffset = strokeDashArray; // resetta il cerchio a vuoto
+}
+
 //definiamo funzione per visualizzare dinamicamente
 function showQuestion(array) {
+  startTimer();
   //selezione h1 e inserimento domanda attuale
   const questionTitle = document.querySelector("h1");
   questionTitle.innerText = array[questionNumber].question;
@@ -148,6 +198,7 @@ function showQuestion(array) {
     //aggiunta bottoni per le risposte
     quizContainer.appendChild(newButton);
   }
+  // startTimer();
 }
 
 showQuestion(arrayQuestions);

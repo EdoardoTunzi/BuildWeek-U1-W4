@@ -9,6 +9,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 150px;
 }
 
 .logo {
@@ -16,13 +17,13 @@ body {
   height: 30px;
   display: inline-block;
 }
-.timer-box {
+/* .timer-box {
   display: inline-block;
   vertical-align: top;
   background-color: none;
   border-radius: 50%;
   border: 3px solid white;
-}
+} */
 
 h1 {
   font-size: 60px;

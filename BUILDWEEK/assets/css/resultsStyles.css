@@ -74,7 +74,7 @@ h3 {
   position: relative;
   max-width: 400px;
 }
-.chart {
+#chart {
   display: block;
   border-radius: 50;
 }

@@ -1,36 +1,48 @@
-// Sezione sviluppo Pie Chart
-/*const canvas = document.getElementById("chart");
-const context = canvas.getContext("2d");
-const data = [66.7, 33.3];
-const colors = ["#00FFFF", "#D20094"];
-const total = data.reduce((a, b) => a + b, 0);
-let startAngle = 0;
+let urlParams = new URLSearchParams(window.location.search);
+let correct = urlParams.get("correct");
+let wrong = urlParams.get("wrong");
+let totalQuestions = urlParams.get("len");
+//modifichiamo il valore dei parametri del testo
+let descriptionCorrect = document.querySelector("#correct .description2");
+descriptionCorrect.innerHTML = `${correct}/${totalQuestions} questions`;
 
-for (let i = 0; i < data.length; i++) {
-  const sliceAngle = (data[i] / total) * 2 * Math.PI;
-  context.beginPath();
-  context.moveTo(200, 200);
-  context.arc(200, 200, 150, startAngle, startAngle + sliceAngle);
-  context.closePath();
-  context.fillStyle = colors[i];
-  context.fill();
-  startAngle += sliceAngle;
+let descriptionWrong = document.querySelector("#wrong .description2");
+descriptionWrong.innerHTML = `${wrong}/${totalQuestions} questions`;
+
+//calcoli per percentuali
+let correctPerc = (correct * 100) / totalQuestions;
+let wrongPerc = (wrong * 100) / totalQuestions;
+
+//modifica valore percentuali pagina
+let documentCorrectPerc = document.querySelector("#correct .percent");
+documentCorrectPerc.innerHTML = `${correctPerc}%`;
+
+let documentWrongPerc = document.querySelector("#wrong .percent");
+documentWrongPerc.innerHTML = `${wrongPerc}%`;
+
+//modifica testo esito esame in pagina
+let chartText = document.querySelector(".chart-text");
+
+if (correctPerc >= 60) {
+  chartText.innerHTML = `<p id="congrats">Congratulations!</p><p id="passed-text">You passed the exam.</p><p id="passed-info">We'll send you the certificate <br />in few minutes. <br />Check your email (including <br />promotions / spam folder)</p>`;
+} else {
+  chartText.innerHTML = `<p id="congrats">OPS!</p><p id="passed-text">You haven't passed the exam.</p>`;
+  chartText.style = "line-height:20px";
 }
-/*context.beginPath();
-context.moveTo(200, 200);
-context.arc(200, 200, 70, 0, 2 * Math.PI);
-context.strokeStyle = "transparent";
-context.stroke();
-context.beginPath();
-context.arc(canvas.width / 2, canvas.height / 2, innerRadius, 0, 2 * Math.PI);
-context.fillStyle = "rgba(255, 255, 255, 0)"; // Trasparente
-context.fill();*/
+
+//difiniamo le regole del bottone
+let nextPageButton = document.getElementById("rate-us");
+nextPageButton.onclick = function () {
+  window.location.href = "feedback.html";
+};
+
+// Sezione sviluppo Pie Chart
 const canvas = document.getElementById("chart");
 const ctx = canvas.getContext("2d");
 canvas.style.transform = "rotate(30deg)";
 //canvas.style.boxShadow = "0px 0px 16px 6px rgba(0,0,0,0.89)";
 // Dati per il grafico
-const data = [66.7, 33.3]; // Valori percentuali
+const data = [correctPerc, wrongPerc]; // Valori percentuali
 const colors = ["#00FFFF", "#D20094"]; // Colori
 
 // Funzione per disegnare il grafico a ciambella

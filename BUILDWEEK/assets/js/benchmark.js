@@ -182,7 +182,7 @@ function showQuestion(array) {
           wrongAnswers += 1;
           questionNumber++;
         }
-        window.location.href = "results.html";
+        window.location.href = `results.html?correct=${correctAnswers}&wrong=${wrongAnswers}&len=${arrayQuestions.length}`;
       } else {
         if (newButton.innerText == array[questionNumber].correct_answer) {
           correctAnswers += 1;

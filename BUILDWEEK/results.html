@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Results Page</title>
     <link rel="stylesheet" href="./assets/css/resultsStyles.css" />
   </head>
   <body>
     <header>
-      <img class="logo" src="./assets/imgs/epicode_logo.png" alt="logo epicode" />
+      <img
+        class="logo"
+        src="./assets/imgs/epicode_logo.png"
+        alt="logo epicode"
+      />
     </header>
     <main>
       <div class="title-box">
@@ -29,15 +39,7 @@
         </div>
         <div class="pie-chart results">
           <canvas id="chart" width="400" height="400"></canvas>
-          <div class="chart-text">
-            <p id="congrats">Congratulations!</p>
-            <p id="passed-text">You passed the exam.</p>
-            <p id="passed-info">
-              We'll send you the certificate <br />
-              in few minutes. <br />Check your email (including <br />
-              promotions / spam folder)
-            </p>
-          </div>
+          <div class="chart-text"></div>
         </div>
         <div class="results" id="wrong">
           <p class="title">Wrong</p>
@@ -45,7 +47,7 @@
           <p class="description2">2/6 questions</p>
         </div>
       </div>
-      <button>RATE US</button>
+      <button id="rate-us">RATE US</button>
     </main>
     <script src="./assets/js/results.js"></script>
   </body>

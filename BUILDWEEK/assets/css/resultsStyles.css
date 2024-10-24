@@ -6,6 +6,11 @@ body {
   font-family: "Outfit", sans-serif;
   color: white;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
 .title,
 .percent {
   font-family: "Outfit", sans-serif;

@@ -39,7 +39,7 @@ nextPageButton.onclick = function () {
 // Sezione sviluppo Pie Chart
 const canvas = document.getElementById("chart");
 const ctx = canvas.getContext("2d");
-canvas.style.transform = "rotate(30deg)";
+
 //canvas.style.boxShadow = "0px 0px 16px 6px rgba(0,0,0,0.89)";
 // Dati per il grafico
 const data = [correctPerc, wrongPerc]; // Valori percentuali

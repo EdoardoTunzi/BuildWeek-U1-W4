@@ -21,11 +21,13 @@
   </head>
   <body>
     <header>
-      <img
-        class="logo"
-        src="./assets/imgs/epicode_logo.png"
-        alt="logo epicode"
-      />
+      <a href="index.html">
+        <img
+          class="logo"
+          src="./assets/imgs/epicode_logo.png"
+          alt="logo epicode"
+        />
+      </a>
     </header>
     <main>
       <h1>Welcome to <br /><span class="h1">your exam</span></h1>
@@ -47,7 +49,19 @@
         </li>
         <li>This exam will take approx. <span>0-5 minutes</span>.</li>
       </ul>
+      <div id="personalization">
+        <label for="easy" class="label">Select difficulty:</label>
 
+        <button class="btn-selection" id="easy">EASY</button>
+        <button class="btn-selection" id="medium">MEDIUM</button>
+        <button class="btn-selection" id="hard">HARD</button>
+
+        <br />
+        <label for="num_1" class="label">Select number of questions:</label>
+        <button class="btn-selection_2" id="num_1">5</button>
+        <button class="btn-selection_2" id="num_2">10</button>
+        <button class="btn-selection_2" id="num_3">15</button>
+      </div>
       <div class="checkbox">
         <input type="checkbox" name="box" id="box" />
         <span>I promise to answer myself whithout help from anyone</span>

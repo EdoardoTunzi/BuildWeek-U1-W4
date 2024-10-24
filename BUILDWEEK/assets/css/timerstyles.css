@@ -10,6 +10,7 @@
   top: 0;
   right: 0;
   margin: 20px;
+  transform: rotate(272deg);
 }
 .outer {
   height: 160px;
@@ -40,6 +41,7 @@
   text-align: center;
   font-size: 12px; /* testo più piccolo*/
   color: rgba(255, 255, 255, 0.7);
+  transform: rotate(88deg);
 }
 #timer + br + span {
   font-size: 12px;

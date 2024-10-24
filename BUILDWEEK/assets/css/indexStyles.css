@@ -105,3 +105,42 @@ ul span {
 .alert {
   color: red;
 }
+
+#personalization {
+  color: white;
+  margin-top: 20px;
+  line-height: 35px;
+}
+
+.label {
+  margin-top: 10px;
+}
+
+.btn-selection,
+.btn-selection_2 {
+  margin-left: 5px;
+  background-color: white;
+  color: #0c1839;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+}
+
+.selected {
+  background-color: #00ffff;
+}
+.btn-selection:hover {
+  box-shadow: 0px 0px 26px 7px #00ffff;
+}
+.btn-selection_2:hover {
+  box-shadow: 0px 0px 26px 7px #00ffff;
+}
+
+button:hover {
+  cursor: pointer;
+}

@@ -1,8 +1,11 @@
 // startTimer();
+let arrayQuestions = [];
+let urlParams = new URLSearchParams(window.location.search);
+arrayQuestions = JSON.parse(decodeURIComponent(urlParams.get("array")));
 
 //////////////////////////////////////////////////////////
 
-const arrayQuestions = [
+const arrayprova = [
   {
     type: "boolean",
     difficulty: "easy",
@@ -101,6 +104,7 @@ let wrongAnswers = 0;
 
 let questionNumber = 0; //indice domanda di arrayQuestions
 
+//sezione per gestione timer
 let timer;
 let startTime;
 const totalTime = 60; // tempo totale in secondi
@@ -129,7 +133,7 @@ function updateProgressBar() {
   if (timeLeft <= 0) {
     if (questionNumber === arrayQuestions.length - 1) {
       wrongAnswers += 1;
-      window.location.href = "results.html";
+      window.location.href = `results.html?correct=${correctAnswers}&wrong=${wrongAnswers}&len=${arrayQuestions.length}`;
     } else {
       questionNumber++;
       wrongAnswers += 1;
@@ -150,7 +154,7 @@ function showQuestion(array) {
   startTimer();
   //selezione h1 e inserimento domanda attuale
   const questionTitle = document.querySelector("h1");
-  questionTitle.innerText = array[questionNumber].question;
+  questionTitle.innerHTML = array[questionNumber].question;
   //selezione e pulizia container
   const quizContainer = document.getElementById("quiz-container");
   quizContainer.innerHTML = "";
@@ -176,6 +180,7 @@ function showQuestion(array) {
     newButton.onclick = function () {
       if (questionNumber === arrayQuestions.length - 1) {
         if (newButton.innerText == array[questionNumber].correct_answer) {
+          newButton.style.backgroundColor = "green";
           correctAnswers += 1;
           questionNumber++;
         } else {
@@ -185,9 +190,11 @@ function showQuestion(array) {
         window.location.href = `results.html?correct=${correctAnswers}&wrong=${wrongAnswers}&len=${arrayQuestions.length}`;
       } else {
         if (newButton.innerText == array[questionNumber].correct_answer) {
+          newButton.style.backgroundColor = "green";
           correctAnswers += 1;
           questionNumber++;
-          showQuestion(arrayQuestions);
+          setTimeout(showQuestion(arrayQuestions), 10000);
+          // showQuestion(arrayQuestions);
         } else {
           wrongAnswers += 1;
           questionNumber++;

@@ -18,8 +18,7 @@ const arrayprova = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which company was established on April 1st, 1976 by Steve Jobs, Steve Wozniak and Ronald Wayne?",
+    question: "Which company was established on April 1st, 1976 by Steve Jobs, Steve Wozniak and Ronald Wayne?",
     correct_answer: "Apple",
     incorrect_answers: ["Microsoft", "Atari", "Commodore"],
   },
@@ -27,8 +26,7 @@ const arrayprova = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which computer language would you associate Django framework with?",
+    question: "Which computer language would you associate Django framework with?",
     correct_answer: "Python",
     incorrect_answers: ["C#", "C++", "Java"],
   },
@@ -36,14 +34,9 @@ const arrayprova = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Which computer hardware device provides an interface for all other connected devices to communicate?",
+    question: "Which computer hardware device provides an interface for all other connected devices to communicate?",
     correct_answer: "Motherboard",
-    incorrect_answers: [
-      "Central Processing Unit",
-      "Hard Disk Drive",
-      "Random Access Memory",
-    ],
+    incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
   },
   {
     type: "multiple",
@@ -65,8 +58,7 @@ const arrayprova = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -74,8 +66,7 @@ const arrayprova = [
     type: "boolean",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -91,8 +82,7 @@ const arrayprova = [
     type: "multiple",
     difficulty: "easy",
     category: "Science: Computers",
-    question:
-      "The numbering system with a radix of 16 is more commonly referred to as",
+    question: "The numbering system with a radix of 16 is more commonly referred to as",
     correct_answer: "Hexidecimal",
     incorrect_answers: ["Binary", "Duodecimal", "Octal"],
   },
@@ -109,7 +99,7 @@ let timer;
 let startTime;
 const totalTime = 60; // tempo totale in secondi
 const circle = document.querySelector("circle");
-const strokeDashArray = 472; // valore fisso per il cerchio
+const strokeDashArray = 446; // valore fisso per il cerchio
 circle.style.strokeDasharray = strokeDashArray; // imposta il valore dasharray
 
 function startTimer() {
@@ -124,11 +114,13 @@ function updateProgressBar() {
   const timeLeft = Math.max(totalTime - elapsedTime, 0); // tempo rimanente
 
   // calcola l'offset in base al tempo rimanente
-  const dashOffset = (timeLeft / totalTime) * strokeDashArray;
+
+  const dashOffset = ((timeLeft + 0.5) / totalTime) * strokeDashArray;
+
   circle.style.strokeDashoffset = dashOffset; // imposta l'offset
 
   // aggiorna il display del timer
-  document.getElementById("timer").textContent = Math.ceil(timeLeft); // arrotonda per eccesso
+  document.getElementById("timer").textContent = Math.floor(timeLeft); // arrotonda per eccesso
 
   if (timeLeft <= 0) {
     if (questionNumber === arrayQuestions.length - 1) {
@@ -160,15 +152,11 @@ function showQuestion(array) {
   quizContainer.innerHTML = "";
   //selezione e modifica contatore domanda
   const questionCounter = document.querySelector("footer p");
-  questionCounter.innerHTML = `QUESTION ${questionNumber + 1} <span> / ${
-    arrayQuestions.length
-  }</span>`;
+  questionCounter.innerHTML = `QUESTION ${questionNumber + 1} <span> / ${arrayQuestions.length}</span>`;
   //definiamo funzione per mescolare le risposte giuste e sbagliate
   const shuffleAnswers = (questionNumber) => {
     let allAnswers = [arrayQuestions[questionNumber].correct_answer];
-    arrayQuestions[questionNumber].incorrect_answers.forEach((answer) =>
-      allAnswers.push(answer)
-    );
+    arrayQuestions[questionNumber].incorrect_answers.forEach((answer) => allAnswers.push(answer));
     return allAnswers.sort(() => Math.random() - 0.5);
   };
   //controllo per numero di domanda e risposta corretta o errata

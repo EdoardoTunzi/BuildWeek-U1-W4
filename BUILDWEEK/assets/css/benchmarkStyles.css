@@ -5,11 +5,13 @@ body {
   margin-inline: 80px;
   font-family: "Outfit", sans-serif;
 }
-
+main {
+  height: 400px;
+}
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 150px;
+  margin-bottom: 15rem;
 }
 
 .logo {
@@ -61,6 +63,7 @@ button {
   color: white;
   border-radius: 30px;
   font-family: "Outfit", sans-serif;
+  font-size: 25px;
 }
 
 #quiz-container {

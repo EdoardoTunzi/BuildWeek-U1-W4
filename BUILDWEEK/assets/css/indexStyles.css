@@ -18,6 +18,7 @@ h1 {
   font-size: 60px;
   color: white;
   line-height: 45px;
+  margin-top: 60px;
 }
 
 .h1 {
@@ -50,9 +51,13 @@ ul span {
 
 .checkbox {
   display: flex;
+  justify-content: space-between;
+  vertical-align: top;
   margin-top: 80px;
   color: white;
   align-items: center;
+}
+.checkbox-div span {
 }
 
 #box {
@@ -85,7 +90,6 @@ ul span {
 }
 
 #proceed_button {
-  margin-left: 200px;
   background-color: white;
   color: #0c1839;
   font-weight: bold;
@@ -100,6 +104,7 @@ ul span {
 
 .checkbox span {
   margin-left: 5px;
+  vertical-align: super;
 }
 
 .alert {

@@ -100,7 +100,7 @@ proceed_button.onclick = function () {
     }
   }
 };
-// gestione funzionalità per mantenere slezionati i tasti numero domande e difficoltà
+// gestione funzionalità per mantenere selezionati i tasti numero domande e difficoltà
 let new_buttons = document.querySelectorAll(".btn-selection");
 new_buttons.forEach((element) => {
   element.addEventListener("click", function () {

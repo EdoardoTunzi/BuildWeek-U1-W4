@@ -95,7 +95,7 @@ let wrongAnswers = 0;
 let questionNumber = 0; //indice domanda di arrayQuestions
 
 //sezione per gestione timer
-/*let timer;
+let timer;
 let startTime;
 const totalTime = 60; // tempo totale in secondi
 const circle = document.querySelector("circle");
@@ -140,10 +140,10 @@ function updateProgressBar() {
 function resetCircle() {
   circle.style.strokeDashoffset = strokeDashArray; // resetta il cerchio a vuoto
 }
-*/
+
 //definiamo funzione per visualizzare dinamicamente
 function showQuestion(array) {
-  //startTimer();
+  startTimer();
   //selezione h1 e inserimento domanda attuale
   const questionTitle = document.querySelector("h1");
   questionTitle.innerHTML = array[questionNumber].question;

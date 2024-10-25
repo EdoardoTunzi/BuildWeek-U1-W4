@@ -172,21 +172,29 @@ function showQuestion(array) {
           correctAnswers += 1;
           questionNumber++;
         } else {
+          newButton.style.backgroundColor = "red";
           wrongAnswers += 1;
           questionNumber++;
         }
-        window.location.href = `results.html?correct=${correctAnswers}&wrong=${wrongAnswers}&len=${arrayQuestions.length}`;
+        setTimeout(() => {
+          window.location.href = `results.html?correct=${correctAnswers}&wrong=${wrongAnswers}&len=${arrayQuestions.length}`;
+        }, 500);
       } else {
         if (newButton.innerText == array[questionNumber].correct_answer) {
           newButton.style.backgroundColor = "green";
           correctAnswers += 1;
           questionNumber++;
-          setTimeout(showQuestion(arrayQuestions), 10000);
+          setTimeout(() => {
+            showQuestion(arrayQuestions);
+          }, 500);
           // showQuestion(arrayQuestions);
         } else {
+          newButton.style.backgroundColor = "red";
           wrongAnswers += 1;
           questionNumber++;
-          showQuestion(arrayQuestions);
+          setTimeout(() => {
+            showQuestion(arrayQuestions);
+          }, 500);
         }
       }
     };

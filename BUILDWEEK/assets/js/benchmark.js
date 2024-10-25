@@ -1,11 +1,4 @@
-// startTimer();
-let arrayQuestions = [];
-let urlParams = new URLSearchParams(window.location.search);
-arrayQuestions = JSON.parse(decodeURIComponent(urlParams.get("array")));
-
-//////////////////////////////////////////////////////////
-
-const arrayprova = [
+/*const arrayprova = [
   {
     type: "boolean",
     difficulty: "easy",
@@ -86,7 +79,10 @@ const arrayprova = [
     correct_answer: "Hexidecimal",
     incorrect_answers: ["Binary", "Duodecimal", "Octal"],
   },
-];
+];*/
+let arrayQuestions = [];
+let urlParams = new URLSearchParams(window.location.search);
+arrayQuestions = JSON.parse(decodeURIComponent(urlParams.get("array")));
 
 //definiamo variabili da passare alla pagina results
 let correctAnswers = 0;
@@ -140,8 +136,11 @@ function updateProgressBar() {
 function resetCircle() {
   circle.style.strokeDashoffset = strokeDashArray; // resetta il cerchio a vuoto
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //definiamo funzione per visualizzare dinamicamente
+
+//funzione per mostrare le domande
 function showQuestion(array) {
   startTimer();
   //selezione h1 e inserimento domanda attuale
@@ -160,11 +159,10 @@ function showQuestion(array) {
     return allAnswers.sort(() => Math.random() - 0.5);
   };
   //controllo per numero di domanda e risposta corretta o errata
-  let question = array[questionNumber].question;
   let answerArray = shuffleAnswers(questionNumber);
   for (let i = 0; i < answerArray.length; i++) {
     const newButton = document.createElement("button");
-    newButton.innerText = answerArray[i];
+    newButton.innerHTML = answerArray[i];
     newButton.onclick = function () {
       if (questionNumber === arrayQuestions.length - 1) {
         if (newButton.innerText == array[questionNumber].correct_answer) {
@@ -187,7 +185,6 @@ function showQuestion(array) {
           setTimeout(() => {
             showQuestion(arrayQuestions);
           }, 500);
-          // showQuestion(arrayQuestions);
         } else {
           newButton.style.backgroundColor = "red";
           wrongAnswers += 1;
@@ -201,7 +198,6 @@ function showQuestion(array) {
     //aggiunta bottoni per le risposte
     quizContainer.appendChild(newButton);
   }
-  // startTimer();
 }
 
 showQuestion(arrayQuestions);

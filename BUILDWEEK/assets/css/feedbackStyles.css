@@ -10,6 +10,9 @@ button:hover {
   cursor: pointer;
 }
 
+.logo {
+  width: 160px;
+}
 h1 {
   font-size: 3em;
   width: 100%;

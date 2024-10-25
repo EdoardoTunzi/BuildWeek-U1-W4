@@ -40,7 +40,6 @@ nextPageButton.onclick = function () {
 const canvas = document.getElementById("chart");
 const ctx = canvas.getContext("2d");
 
-//canvas.style.boxShadow = "0px 0px 16px 6px rgba(0,0,0,0.89)";
 // Dati per il grafico
 const data = [correctPerc, wrongPerc]; // Valori percentuali
 const colors = ["#00FFFF", "#D20094"]; // Colori

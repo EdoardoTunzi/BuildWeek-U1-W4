@@ -10,9 +10,7 @@ checkbox.onclick = function () {
     proceed_button.style = "background-color:white";
   }
 };
-
-// const amount = document.getElementById("level");
-// console.log(amount);
+// sezione scelta difficolta e numero domande
 let difficulty = "";
 let amount = 0;
 const easy = document.getElementById("easy");
@@ -32,25 +30,19 @@ hard.onclick = function () {
 };
 num_1.onclick = function () {
   amount = parseInt(num_1.innerText);
-  // amount = 5;
 };
 num_2.onclick = function () {
   amount = parseInt(num_2.innerText);
-  // amount = 10;
 };
 num_3.onclick = function () {
   amount = parseInt(num_3.innerText);
-  // amount = 20;
 };
 let arrayQuestions = [];
 async function getQuestions(difficulty, amount) {
   try {
-    const response = await fetch(
-      `https://opentdb.com/api.php?amount=${amount}&category=18&difficulty=${difficulty}`
-    );
+    const response = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=18&difficulty=${difficulty}`);
     const data = await response.json();
     arrayQuestions = data.results;
-    // return arrayQuestions;
     const jsonArray = JSON.stringify(arrayQuestions);
     const url = `benchmark.html?array=${encodeURIComponent(jsonArray)}`;
     window.location.href = url;
@@ -76,28 +68,25 @@ proceed_button.onclick = function () {
 
     main.appendChild(errorMessage);
     errorMessage.style.display = "block";
-    errorMessage.textContent = "* Insert difficulty and amount ";
+    errorMessage.textContent = "* Select difficulty and number of questions ";
   } else if (difficulty === "" && amount !== 0) {
     const errorMessage = document.createElement("p");
     errorMessage.classList.add("alert");
 
     main.appendChild(errorMessage);
     errorMessage.style.display = "block";
-    errorMessage.textContent = "* Insert difficulty ";
+    errorMessage.textContent = "* Select difficulty ";
   } else if (difficulty !== "" && amount === 0) {
     const errorMessage = document.createElement("p");
     errorMessage.classList.add("alert");
 
     main.appendChild(errorMessage);
     errorMessage.style.display = "block";
-    errorMessage.textContent = "* Insert number of questions ";
+    errorMessage.textContent = "* Select number of questions ";
   } else {
     if (checkbox.checked == true) {
       getQuestions(difficulty, amount);
       //se la checkbox è spuntata manda al benchmark
-      // const jsonArray = JSON.stringify(getQuestions(difficulty, amount));
-      // const url = `benchmark.html?array=${jsonArray}`;
-      // window.location.href = url;
     } else {
       //se la checkbox non è spuntata mostra un alert
       if (counter === 0) {
@@ -111,7 +100,7 @@ proceed_button.onclick = function () {
     }
   }
 };
-
+// gestione funzionalità per mantenere slezionati i tasti numero domande e difficoltà
 let new_buttons = document.querySelectorAll(".btn-selection");
 new_buttons.forEach((element) => {
   element.addEventListener("click", function () {
